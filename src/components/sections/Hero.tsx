@@ -26,17 +26,6 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-600 dark:text-primary-400 text-sm font-medium mb-6"
-          >
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            Available for internships & full-time roles
-          </motion.div>
-
           {/* Main Headline */}
           <motion.h1
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
@@ -104,7 +93,7 @@ export default function Hero() {
               className="group min-w-[200px]"
             >
               <Mail className="mr-2 w-5 h-5" />
-              Hire Me
+              Contact Me
             </Button>
 
             <Button
@@ -141,21 +130,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.2 }}
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 flex justify-center pt-2"
-        >
-          <motion.div className="w-1.5 h-1.5 rounded-full bg-gray-400 dark:bg-gray-600" />
-        </motion.div>
-      </motion.div>
     </section>
   )
 }

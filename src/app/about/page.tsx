@@ -123,7 +123,7 @@ export default function AboutPage() {
                       What drives me now is building software that actually works in the real world. I'm not looking to build the next Facebook - I want to join a team where I can solve real problems for real users and learn from experienced developers along the way.
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                      Currently seeking: <span className="font-semibold text-primary-400">Frontend/Full-stack Developer roles</span> • <span className="font-semibold text-primary-400">Internships</span> • <span className="font-semibold text-primary-400">Junior positions</span>
+                      What drives me now is building software that actually works in the real world. I'm looking to join a team where I can solve real problems for real users and learn from experienced developers along the way.
                     </p>
                   </div>
                 </CardContent>
