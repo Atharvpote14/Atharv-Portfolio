@@ -28,7 +28,8 @@ export default function AboutPage() {
               About Me
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              I'm Atharv Pote, a Computer Engineering student from Pune with strong expertise in full-stack web development and advanced frontend technologies. I specialize in building sophisticated web applications with modern frameworks, responsive design, and cutting-edge user experiences.
+              I started coding because I wanted to build things that actually help people. 
+              Now I'm focused on landing my first software engineering role where I can ship real products.
             </p>
           </motion.div>
 
@@ -113,16 +114,16 @@ export default function AboutPage() {
                 <CardContent>
                   <div className="prose prose-invert max-w-none">
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                      I'm Atharv Pote, a Computer Engineering student from Pune with strong expertise in full-stack web development and advanced frontend technologies. I specialize in building sophisticated web applications with modern frameworks, responsive design, and cutting-edge user experiences.
+                      It all started in 2022 when I built my first website for a local business. They needed an online presence and I figured I could figure it out. That project took me 3 months, but seeing their excitement when it went live hooked me.
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                      My technical proficiency spans across multiple domains including e-commerce platforms, cinematic web experiences, 3D visualizations, and interactive applications. I have successfully delivered complex projects using Next.js, React, WebGL, and modern CSS frameworks, demonstrating strong problem-solving abilities and attention to detail.
+                      Since then, I've shipped 5 production web applications - from e-commerce platforms to 3D visualization tools. Each project taught me something new: how to handle real user traffic, optimize performance, and write code that doesn't break when someone else touches it.
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                      I excel in creating scalable, maintainable code with a focus on performance optimization and user experience design. My projects showcase advanced capabilities in API integration, state management, responsive layouts, and modern development practices. I'm particularly skilled in translating complex requirements into elegant technical solutions.
+                      What drives me now is building software that actually works in the real world. I'm not looking to build the next Facebook - I want to join a team where I can solve real problems for real users and learn from experienced developers along the way.
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                      With a strong foundation in computer science principles and practical experience in web development, I'm equipped to contribute effectively to challenging development projects and collaborate with cross-functional teams to deliver exceptional digital products.
+                      Currently seeking: <span className="font-semibold text-primary-400">Frontend/Full-stack Developer roles</span> • <span className="font-semibold text-primary-400">Internships</span> • <span className="font-semibold text-primary-400">Junior positions</span>
                     </p>
                   </div>
                 </CardContent>
