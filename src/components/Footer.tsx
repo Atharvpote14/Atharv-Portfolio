@@ -93,7 +93,7 @@ export default function Footer() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.3, margin: "-100px" }}
+          viewport={{ amount: 0.2 }}
         >
           {/* Brand Column */}
           <motion.div variants={itemVariants} className="lg:col-span-1 space-y-6">
