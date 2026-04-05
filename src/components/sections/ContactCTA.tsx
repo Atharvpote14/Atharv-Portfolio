@@ -14,7 +14,7 @@ export default function ContactCTA() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
         >
           {/* Background decoration */}
           <div className="absolute inset-0 bg-black/10" />
@@ -27,7 +27,7 @@ export default function ContactCTA() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
+              viewport={{ amount: 0.3 }}
             >
               Let's Build Something Amazing Together
             </motion.h2>
@@ -37,7 +37,7 @@ export default function ContactCTA() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
+              viewport={{ amount: 0.3 }}
             >
               Have a project in mind? I'd love to hear about it. Let's discuss how we can bring your ideas to life.
             </motion.p>
@@ -47,7 +47,7 @@ export default function ContactCTA() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
+              viewport={{ amount: 0.3 }}
             >
               <Button
                 variant="primary"

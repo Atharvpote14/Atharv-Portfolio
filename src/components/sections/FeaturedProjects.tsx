@@ -17,7 +17,7 @@ export default function FeaturedProjects() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Featured Projects
@@ -34,7 +34,7 @@ export default function FeaturedProjects() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
+              viewport={{ amount: 0.3 }}
             >
               <Card>
                 <CardHeader>
@@ -103,7 +103,7 @@ export default function FeaturedProjects() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
         >
           <Button variant="outline" href="/projects">
             View All Projects

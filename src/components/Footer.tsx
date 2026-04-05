@@ -93,7 +93,7 @@ export default function Footer() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ amount: 0.3, margin: "-100px" }}
         >
           {/* Brand Column */}
           <motion.div variants={itemVariants} className="lg:col-span-1 space-y-6">
@@ -243,7 +243,7 @@ export default function Footer() {
           className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800"
           initial={{ opacity: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, scaleX: 1 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
         />
 
@@ -252,7 +252,7 @@ export default function Footer() {
           className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <p className="text-gray-600 dark:text-gray-400 text-sm text-center md:text-left">

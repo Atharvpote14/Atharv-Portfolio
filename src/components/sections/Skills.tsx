@@ -17,7 +17,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Skills & Technologies
@@ -33,7 +33,7 @@ export default function Skills() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ amount: 0.3 }}
           >
             <Card>
               <CardHeader>
@@ -50,7 +50,7 @@ export default function Skills() {
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
+                      viewport={{ amount: 0.3 }}
                     >
                       <div className="flex justify-between items-center mb-1">
                         <span className="text-gray-700 dark:text-gray-300 text-sm">{skill.name}</span>
@@ -62,7 +62,7 @@ export default function Skills() {
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           transition={{ duration: 1, delay: index * 0.1 }}
-                          viewport={{ once: true }}
+                          viewport={{ amount: 0.3 }}
                         />
                       </div>
                     </motion.div>
@@ -77,7 +77,7 @@ export default function Skills() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            viewport={{ amount: 0.3 }}
           >
             <Card>
               <CardHeader>
@@ -94,7 +94,7 @@ export default function Skills() {
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
+                      viewport={{ amount: 0.3 }}
                     >
                       <div className="flex justify-between items-center mb-1">
                         <span className="text-gray-700 dark:text-gray-300 text-sm">{skill.name}</span>
@@ -106,7 +106,7 @@ export default function Skills() {
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           transition={{ duration: 1, delay: index * 0.1 }}
-                          viewport={{ once: true }}
+                          viewport={{ amount: 0.3 }}
                         />
                       </div>
                     </motion.div>
@@ -121,7 +121,7 @@ export default function Skills() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
+            viewport={{ amount: 0.3 }}
           >
             <Card>
               <CardHeader>
@@ -138,7 +138,7 @@ export default function Skills() {
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
+                      viewport={{ amount: 0.3 }}
                     >
                       <div className="flex justify-between items-center mb-1">
                         <span className="text-gray-700 dark:text-gray-300 text-sm">{skill.name}</span>
@@ -150,7 +150,7 @@ export default function Skills() {
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           transition={{ duration: 1, delay: index * 0.1 }}
-                          viewport={{ once: true }}
+                          viewport={{ amount: 0.3 }}
                         />
                       </div>
                     </motion.div>
