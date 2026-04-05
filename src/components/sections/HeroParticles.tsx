@@ -37,7 +37,7 @@ const ALL_PARTICLES = [
 const useThrottledMousePosition = (enabled: boolean) => {
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 })
   const lastUpdate = useRef(0)
-  const rafRef = useRef<number>()
+  const rafRef = useRef<number | null>(null)
 
   useEffect(() => {
     if (!enabled) return
