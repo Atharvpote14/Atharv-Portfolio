@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   description: "Passionate full-stack developer creating beautiful, scalable web applications with modern technologies.",
   keywords: ["Full Stack Developer", "Web Developer", "React", "Next.js", "Node.js", "TypeScript"],
   authors: [{ name: "Atharv Pote" }],
+  verification: {
+    google: "pH6KOlFWY2Hh_xcKa-REtMVdaUZF2SrFYDEs9dZzHr8",
+  },
   icons: {
     icon: "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
   },
