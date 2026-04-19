@@ -26,8 +26,11 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* SEO Hidden Name for Google */}
+          <h1 className="sr-only">Atharv Pote - Freelance Web Developer India | Full Stack Developer</h1>
+
           {/* Main Headline */}
-          <motion.h1
+          <motion.h2
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,7 +41,17 @@ export default function Hero() {
             <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
               Get You More Clients
             </span>
-          </motion.h1>
+          </motion.h2>
+
+          {/* Visible Name for SEO */}
+          <motion.p
+            className="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+          >
+            👋 Hi, I am Atharv Pote — Freelance Web Developer based in India
+          </motion.p>
 
           {/* Value Proposition */}
           <motion.p
@@ -47,8 +60,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            High-converting websites and web apps for startups and service businesses.
-            Designed to turn visitors into paying customers — not just look good.
+            High-converting websites, web applications & e-commerce stores for businesses.
+            I help startups and service companies turn visitors into paying customers.
           </motion.p>
 
           {/* Trust Line */}
