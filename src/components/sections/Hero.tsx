@@ -1,14 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Download, Mail, Code2, Trophy, Clock } from 'lucide-react'
+import { ArrowRight, Mail, Zap, Rocket, CheckCircle } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import HeroParticles from './HeroParticles'
 
 const achievements = [
-  { icon: Code2, value: '5+', label: 'Production Apps' },
-  { icon: Trophy, value: '500+', label: 'DSA Problems Solved' },
-  { icon: Clock, value: '2+', label: 'Years Coding' },
+  { icon: Rocket, value: '5+', label: 'Real Projects Shipped' },
+  { icon: Zap, value: '2-4', label: 'Week Delivery' },
+  { icon: Mail, value: '<24h', label: 'Response Time' },
 ]
 
 export default function Hero() {
@@ -33,45 +33,55 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            React & Next.js Developer
+            I Build Websites That
             <br />
             <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-              Who Ships Fast
+              Get You More Clients
             </span>
           </motion.h1>
 
           {/* Value Proposition */}
           <motion.p
-            className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto"
+            className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-3 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            I build high-performance web apps that solve real business problems. 
-            From concept to deployment in record time.
+            High-converting websites and web apps for startups and service businesses.
+            Designed to turn visitors into paying customers — not just look good.
           </motion.p>
 
-          {/* Key Achievement Highlight */}
+          {/* Trust Line */}
+          <motion.p
+            className="text-lg text-primary-600 dark:text-primary-400 font-medium mb-6 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.45 }}
+          >
+            No fluff. Just websites that bring real business results.
+          </motion.p>
+
+          {/* Social Proof Tags */}
           <motion.div
-            className="flex flex-wrap justify-center gap-4 mb-8"
+            className="flex flex-wrap justify-center gap-3 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <span className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm">
-              ⚡ 5 Production Apps Built
+            <span className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium">
+              ✅ 5+ Real Projects Shipped
             </span>
-            <span className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm">
-              🏆 500+ DSA Problems Solved
+            <span className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium">
+              ⏱️ 2-4 Week Turnaround
             </span>
-            <span className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm">
-              🚀 100% TypeScript Coverage
+            <span className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium">
+              � Conversion-Focused Builds
             </span>
           </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
@@ -79,32 +89,40 @@ export default function Hero() {
             <Button
               variant="primary"
               size="lg"
-              href="/projects"
-              className="group min-w-[200px]"
-            >
-              View Projects
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-
-            <Button
-              variant="secondary"
-              size="lg"
-              href="mailto:atharvpote14@gmail.com"
-              className="group min-w-[200px]"
+              href="/contact"
+              className="group min-w-[260px]"
             >
               <Mail className="mr-2 w-5 h-5" />
-              Contact Me
+              Tell me about your project
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
 
             <Button
               variant="outline"
               size="lg"
-              href="/Atharv%20Resume.pdf"
-              className="group min-w-[200px]"
+              href="/projects"
+              className="group min-w-[180px]"
             >
-              <Download className="mr-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
-              Resume
+              View Projects
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
+          </motion.div>
+
+          {/* Trust Microcopy */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-12 text-sm text-gray-500 dark:text-gray-400"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.75 }}
+          >
+            <span className="flex items-center">
+              <CheckCircle className="w-4 h-4 mr-1 text-green-500" />
+              I will get back within 24 hours
+            </span>
+            <span className="flex items-center">
+              <CheckCircle className="w-4 h-4 mr-1 text-green-500" />
+              Quick response. No spam.
+            </span>
           </motion.div>
 
           {/* Achievement Stats */}

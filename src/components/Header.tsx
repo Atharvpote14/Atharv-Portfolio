@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Moon, Sun, ExternalLink } from 'lucide-react'
+import { Menu, X, Moon, Sun, ExternalLink, FileText } from 'lucide-react'
 import { useTheme } from '@/components/ThemeProvider'
 import { cn } from '@/lib/utils'
 import { GitHubIcon, LinkedInIcon, MailIcon } from '@/components/icons/SocialIcons'
@@ -119,6 +119,17 @@ export default function Header() {
 
             {/* Right Section */}
             <div className="flex items-center space-x-2">
+              {/* Get a Quote CTA - Desktop */}
+              <motion.a
+                href="/contact"
+                className="hidden md:flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg text-sm font-medium transition-all duration-300 mr-2"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FileText className="w-4 h-4 mr-2" />
+                Get a quote
+              </motion.a>
+
               {/* Social Links - Desktop */}
               <div className="hidden lg:flex items-center space-x-1 pr-4 border-r border-gray-200 dark:border-gray-700">
                 {socialLinks.map((social) => {
@@ -270,6 +281,19 @@ export default function Header() {
 
                 {/* Divider */}
                 <div className="border-t border-gray-200 dark:border-gray-700 my-4" />
+
+                {/* Get a Quote - Mobile */}
+                <motion.a
+                  href="/contact"
+                  className="flex items-center justify-center w-full p-4 rounded-xl bg-primary-600 text-white font-medium hover:bg-primary-700 transition-all duration-300 mb-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.25 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <FileText className="w-5 h-5 mr-2" />
+                  Get a quote
+                </motion.a>
 
                 {/* Social Links */}
                 <div className="flex justify-center space-x-4">

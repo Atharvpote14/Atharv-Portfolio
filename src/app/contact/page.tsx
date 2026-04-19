@@ -6,24 +6,25 @@ import { socialLinks } from '@/data/social'
 import { Card, CardContent, CardHeader } from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
 import { motion } from 'framer-motion'
-import { MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react'
-import { ContactForm } from '@/types'
+import { MapPin, Send, CheckCircle, AlertCircle, FileText } from 'lucide-react'
 import { GitHubIcon, LinkedInIcon, MailIcon } from '@/components/icons/SocialIcons'
 import emailjs from '@emailjs/browser'
 import { EMAILJS_CONFIG } from '@/config/emailjs'
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState<ContactForm>({
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
+    projectType: '',
+    budget: '',
     message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const [errors, setErrors] = useState<Partial<ContactForm>>({})
+  const [errors, setErrors] = useState<Record<string, string>>({})
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<ContactForm> = {}
+    const newErrors: Record<string, string> = {}
 
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required'
@@ -35,10 +36,14 @@ export default function ContactPage() {
       newErrors.email = 'Please enter a valid email'
     }
 
+    if (!formData.projectType) {
+      newErrors.projectType = 'Please select a project type'
+    }
+
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required'
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters'
+      newErrors.message = 'Project description is required'
+    } else if (formData.message.trim().length < 20) {
+      newErrors.message = 'Please provide a bit more detail (at least 20 characters)'
     }
 
     setErrors(newErrors)
@@ -58,6 +63,8 @@ export default function ContactPage() {
       const templateParams = {
         name: formData.name,
         email: formData.email,
+        projectType: formData.projectType,
+        budget: formData.budget || 'Not specified',
         message: formData.message,
         to_email: 'atharvpote14@gmail.com',
       }
@@ -70,7 +77,7 @@ export default function ContactPage() {
       )
       
       setSubmitStatus('success')
-      setFormData({ name: '', email: '', message: '' })
+      setFormData({ name: '', email: '', projectType: '', budget: '', message: '' })
       setErrors({})
     } catch (error) {
       console.error('EmailJS Error:', error)
@@ -80,13 +87,17 @@ export default function ContactPage() {
     }
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
-    
+
     // Clear error when user starts typing
-    if (errors[name as keyof ContactForm]) {
-      setErrors(prev => ({ ...prev, [name]: undefined }))
+    if (errors[name]) {
+      setErrors(prev => {
+        const newErrors = { ...prev }
+        delete newErrors[name]
+        return newErrors
+      })
     }
   }
 
@@ -102,11 +113,11 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Get In Touch
+              Get a Free Quote
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Have a project in mind or want to collaborate? I'd love to hear from you. 
-              Send me a message and I'll get back to you as soon as possible.
+              Tell me about your project. I will get back within 24 hours with a clear plan and quote.
+              No spam, no pressure—just straightforward communication.
             </p>
           </motion.div>
 
@@ -120,9 +131,9 @@ export default function ContactPage() {
             >
               <Card>
                 <CardHeader>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Send Me a Message</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Project Details</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Fill out the form below and I'll respond within 24 hours.
+                    Fill out the form below. The more details you share, the more accurate my quote will be.
                   </p>
                 </CardHeader>
                 
@@ -178,21 +189,75 @@ export default function ContactPage() {
                       )}
                     </div>
 
-                    {/* Message Field */}
+                    {/* Project Type */}
+                    <div>
+                      <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Project Type *
+                      </label>
+                      <select
+                        id="projectType"
+                        name="projectType"
+                        value={formData.projectType}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 border rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors ${
+                          errors.projectType ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                        }`}
+                        disabled={isSubmitting}
+                      >
+                        <option value="">Select a project type</option>
+                        <option value="landing-page">Landing Page</option>
+                        <option value="ecommerce">E-Commerce Store</option>
+                        <option value="web-app">Web Application</option>
+                        <option value="website">Business Website</option>
+                        <option value="redesign">Website Redesign</option>
+                        <option value="other">Other</option>
+                      </select>
+                      {errors.projectType && (
+                        <p className="mt-1 text-sm text-red-400 flex items-center">
+                          <AlertCircle className="w-4 h-4 mr-1" />
+                          {errors.projectType}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Budget Range */}
+                    <div>
+                      <label htmlFor="budget" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Budget Range (Optional)
+                      </label>
+                      <select
+                        id="budget"
+                        name="budget"
+                        value={formData.budget}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                        disabled={isSubmitting}
+                      >
+                        <option value="">Select your budget range</option>
+                        <option value="under-1k">Under $1,000</option>
+                        <option value="1k-3k">$1,000 - $3,000</option>
+                        <option value="3k-5k">$3,000 - $5,000</option>
+                        <option value="5k-10k">$5,000 - $10,000</option>
+                        <option value="over-10k">$10,000+</option>
+                        <option value="discuss">Rather discuss</option>
+                      </select>
+                    </div>
+
+                    {/* Project Description */}
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Message *
+                        Tell Me About Your Project *
                       </label>
                       <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        rows={6}
+                        rows={5}
                         className={`w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 border rounded-lg text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none ${
                           errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                         }`}
-                        placeholder="Tell me about your project..."
+                        placeholder="What are you building? What problem are you trying to solve? Any specific features or requirements?"
                         disabled={isSubmitting}
                       />
                       {errors.message && (
@@ -218,8 +283,8 @@ export default function ContactPage() {
                         </>
                       ) : (
                         <>
-                          <Send className="w-5 h-5 mr-2" />
-                          Send Message
+                          <FileText className="w-5 h-5 mr-2" />
+                          Get My Free Quote
                         </>
                       )}
                     </Button>
@@ -312,18 +377,32 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
 
-              {/* Response Time */}
+              {/* Quick Response Promise */}
               <Card className="bg-gradient-to-r from-primary-600/10 to-secondary-600/10 border-primary-500/20">
                 <CardContent className="pt-6">
                   <div className="text-center">
                     <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <MailIcon className="w-6 h-6 text-white" />
+                      <CheckCircle className="w-6 h-6 text-white" />
                     </div>
-                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Response Time</h4>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      I typically respond to messages within 24 hours. For urgent inquiries, 
-                      please mention it in your message.
-                    </p>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">What to Expect</h4>
+                    <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-2 text-left">
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✓</span>
+                        Response within 24 hours
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✓</span>
+                        Clear project assessment
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✓</span>
+                        Transparent pricing estimate
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2">✓</span>
+                        Honest timeline expectations
+                      </li>
+                    </ul>
                   </div>
                 </CardContent>
               </Card>

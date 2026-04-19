@@ -1,9 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { Mail, ArrowRight, CheckCircle } from 'lucide-react'
 import Button from '@/components/ui/Button'
-import { MailIcon } from '@/components/icons/SocialIcons'
 
 export default function ContactCTA() {
   return (
@@ -29,18 +28,37 @@ export default function ContactCTA() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ amount: 0.3 }}
             >
-              Let's Build Something Amazing Together
+              Ready to Get Started?
             </motion.h2>
 
             <motion.p
-              className="text-xl text-white/90 mb-8 max-w-2xl mx-auto"
+              className="text-xl text-white/90 mb-4 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ amount: 0.3 }}
             >
-              Have a project in mind? I'd love to hear about it. Let's discuss how we can bring your ideas to life.
+              Tell me about your project. I will get back within 24 hours with a clear plan and quote.
+              No spam, no pressure — just straightforward communication.
             </motion.p>
+
+            {/* Trust Microcopy */}
+            <motion.div
+              className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 text-white/80 text-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ amount: 0.3 }}
+            >
+              <span className="flex items-center">
+                <CheckCircle className="w-4 h-4 mr-1" />
+                Response within 24 hours
+              </span>
+              <span className="flex items-center">
+                <CheckCircle className="w-4 h-4 mr-1" />
+                Clear pricing. No hidden fees.
+              </span>
+            </motion.div>
 
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -55,18 +73,18 @@ export default function ContactCTA() {
                 href="/contact"
                 className="bg-white !text-primary-600 hover:bg-gray-100 border-2 border-white font-semibold"
               >
-                Get In Touch
+                <Mail className="mr-2 w-5 h-5" />
+                Tell me about your project
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
 
               <Button
                 variant="outline"
                 size="lg"
-                href="mailto:atharvpote14@gmail.com"
+                href="/projects"
                 className="border-2 border-white/50 text-white hover:bg-white/10 hover:border-white font-semibold"
               >
-                <MailIcon className="mr-2 w-5 h-5" />
-                Email Me
+                View More Work
               </Button>
             </motion.div>
           </div>

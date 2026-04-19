@@ -6,7 +6,7 @@ import { skills, skillCategories } from '@/data/skills'
 import { Card, CardContent, CardHeader } from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
 import { motion } from 'framer-motion'
-import { Download, Calendar, MapPin, ExternalLink, User, Award } from 'lucide-react'
+import { Calendar, MapPin, ArrowRight, Zap, Rocket, Calendar as CalendarIcon } from 'lucide-react'
 import Image from 'next/image'
 
 export default function AboutPage() {
@@ -25,11 +25,11 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              About Me
+              Your Development Partner
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              I started coding because I wanted to build things that actually help people. 
-              Now I'm focused on landing my first software engineering role where I can ship real products.
+              I am a solo developer who helps businesses turn ideas into working products.
+              Fast, reliable, and focused on results that matter.
             </p>
           </motion.div>
 
@@ -54,7 +54,7 @@ export default function AboutPage() {
                       />
                     </div>
                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Atharv Pote</h2>
-                    <p className="text-primary-400 mb-4">Full Stack Developer</p>
+                    <p className="text-primary-400 mb-4">Independent Web Developer</p>
                     <div className="flex flex-wrap gap-2 justify-center mb-6">
                       <span className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded-full">
                         React
@@ -80,8 +80,8 @@ export default function AboutPage() {
                       <span>Based in India</span>
                     </div>
                     <div className="flex items-center text-gray-600 dark:text-gray-400">
-                      <Award className="w-5 h-5 mr-2 text-primary-400" />
-                      <span>Computer Science Graduate</span>
+                      <Rocket className="w-5 h-5 mr-2 text-primary-400" />
+                      <span>5+ Products Shipped</span>
                     </div>
                   </div>
                   
@@ -89,10 +89,10 @@ export default function AboutPage() {
                     <Button
                       variant="primary"
                       size="sm"
-                      href="/Atharv%20Resume.pdf"
+                      href="/contact"
                     >
-                      <Download className="w-4 h-4 mr-2" />
-                      Download Resume
+                      <CalendarIcon className="w-4 h-4 mr-2" />
+                      Get in Touch
                     </Button>
                   </div>
                 </CardContent>
@@ -109,21 +109,21 @@ export default function AboutPage() {
               {/* Introduction */}
               <Card>
                 <CardHeader>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Introduction</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How I Work</h3>
                 </CardHeader>
                 <CardContent>
                   <div className="prose prose-invert max-w-none">
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                      It all started in 2022 when I built my first website for a local business. They needed an online presence and I figured I could figure it out. That project took me 3 months, but seeing their excitement when it went live hooked me.
+                      I started building websites in 2022 for a local business that needed an online presence. That first project took three months, but the client's reaction when they saw their business live on the web—that excitement never gets old.
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                      Since then, I've shipped 5 production web applications - from e-commerce platforms to 3D visualization tools. Each project taught me something new: how to handle real user traffic, optimize performance, and write code that doesn't break when someone else touches it.
+                      Since then, I have shipped 5 production web applications across different industries—e-commerce, booking systems, brand experiences, and interactive tools. Every project has sharpened my ability to understand what clients actually need versus what they think they want.
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                      What drives me now is building software that actually works in the real world. I'm not looking to build the next Facebook - I want to join a team where I can solve real problems for real users and learn from experienced developers along the way.
+                      As a solo developer, I offer something agencies cannot: direct communication, quick decisions, and complete accountability. When you hire me, you work with me—not an account manager, not a junior developer learning on your project.
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                      What drives me now is building software that actually works in the real world. I'm looking to join a team where I can solve real problems for real users and learn from experienced developers along the way.
+                      I deliver fast without cutting corners. Most projects launch in 2-4 weeks, depending on complexity. I keep you updated throughout the process, and I am available for questions or adjustments even after launch.
                     </p>
                   </div>
                 </CardContent>
