@@ -9,16 +9,26 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+// SEO Configuration based on template
 export const metadata: Metadata = {
   metadataBase: new URL("https://itsatharv.vercel.app"),
-  title: "Atharv Pote | Freelance Web Developer India | Hire Full Stack Developer",
-  description: "Hire Atharv Pote - Professional freelance web developer in India. I build high-converting websites, web apps & e-commerce stores for businesses. Get a free quote in 24 hours. React, Next.js, Node.js expert.",
+  title: "Full Stack Developer Portfolio | Atharv Pote",
+  description: "Full Stack Developer specializing in React, Node.js, and scalable web applications. Explore real-world projects, modern UI design, and performance-focused builds. Hire Atharv Pote for your next project.",
   keywords: [
     "Atharv Pote",
     "Atharv Pote Developer",
     "Atharv Pote Freelancer",
     "Atharv Pote India",
     "Hire Atharv Pote",
+    "Full Stack Developer Portfolio",
+    "React Developer",
+    "React Developer India",
+    "Node.js Developer",
+    "Node.js Developer India",
+    "MERN Stack Developer",
+    "MERN Stack Developer India",
+    "Web Developer Portfolio",
+    "Hire Full Stack Developer",
     "Freelance Web Developer India",
     "Freelance Web Developer",
     "Web Developer India",
@@ -28,9 +38,7 @@ export const metadata: Metadata = {
     "Web Development Services",
     "Website Developer Near Me",
     "E-commerce Developer India",
-    "React Developer India",
     "Next.js Developer",
-    "Node.js Developer",
     "Website Designer India",
     "Landing Page Developer",
     "Business Website Developer",
@@ -38,7 +46,6 @@ export const metadata: Metadata = {
     "Web App Developer",
     "Frontend Developer India",
     "Backend Developer India",
-    "MERN Stack Developer",
     "Portfolio Website Developer",
     "Professional Web Developer",
     "Affordable Web Developer",
@@ -49,6 +56,10 @@ export const metadata: Metadata = {
     "Web Development Freelancer",
     "Shopify Developer India",
     "WordPress Developer India",
+    "JavaScript Developer",
+    "TypeScript Developer",
+    "MongoDB Developer",
+    "Express Developer",
   ],
   authors: [{ name: "Atharv Pote", url: "https://itsatharv.vercel.app" }],
   creator: "Atharv Pote",
@@ -76,25 +87,25 @@ export const metadata: Metadata = {
     apple: "/AP logo.jpg",
   },
   openGraph: {
-    title: "Atharv Pote | Freelance Web Developer India | Hire Full Stack Developer",
-    description: "Hire Atharv Pote - Professional freelance web developer in India. I build high-converting websites, web apps & e-commerce stores for businesses. Get a free quote in 24 hours.",
-    type: "website",
+    title: "Full Stack Developer Portfolio | Atharv Pote",
+    description: "Explore projects built with React, Node.js, and modern technologies. Hire Atharv Pote - skilled full stack developer from India for scalable web applications.",
     url: "https://itsatharv.vercel.app",
-    siteName: "Atharv Pote - Freelance Web Developer",
+    type: "website",
+    siteName: "Atharv Pote - Full Stack Developer Portfolio",
     locale: "en_IN",
     images: [
       {
         url: "/images/Atharv Profile Pic.JPG",
         width: 800,
         height: 600,
-        alt: "Atharv Pote - Freelance Web Developer India",
+        alt: "Atharv Pote - Full Stack Developer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Atharv Pote | Freelance Web Developer India",
-    description: "Hire professional freelance web developer in India. Websites, web apps & e-commerce. Get free quote in 24h.",
+    title: "Full Stack Developer Portfolio | Atharv Pote",
+    description: "React, Node.js, and scalable web apps portfolio. Hire Atharv Pote for your next project.",
     creator: "@atharvpote14",
     images: ["/images/Atharv Profile Pic.JPG"],
   },
@@ -104,6 +115,51 @@ export const metadata: Metadata = {
     "contact:city": "Pune",
     "contact:country": "India",
   },
+};
+
+// JSON-LD Structured Data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Atharv Pote",
+  "url": "https://itsatharv.vercel.app",
+  "jobTitle": "Full Stack Developer",
+  "description": "Full Stack Developer specializing in React, Node.js, and scalable web applications",
+  "email": "atharvpote14@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pune",
+    "addressCountry": "India"
+  },
+  "sameAs": [
+    "https://github.com/Atharvpote14",
+    "https://www.linkedin.com/in/atharv-pote-762964395"
+  ],
+  "knowsAbout": [
+    "JavaScript",
+    "React",
+    "Node.js",
+    "MongoDB",
+    "Express",
+    "Next.js",
+    "TypeScript",
+    "Web Development",
+    "Full Stack Development",
+    "Frontend Development",
+    "Backend Development"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Atharv Pote - Freelance Web Developer"
+  },
+  "makesOffer": {
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "Service",
+      "name": "Web Development Services",
+      "description": "Full stack web development services including React, Node.js, and modern web applications"
+    }
+  }
 };
 
 export default function RootLayout({
@@ -127,6 +183,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-TVSL685G');`}
         </Script>
         {/* End Google Tag Manager */}
+
+        {/* JSON-LD Structured Data */}
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body className="min-h-full flex flex-col font-sans">
         {/* Google Tag Manager (noscript) */}
